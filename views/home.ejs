@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Odibee+Sans&family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>List</title>
+    <script src="https://kit.fontawesome.com/8a65dcb62d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="f">
+        <form  class="f1" action="/" method="post">
+            <h1><%= title %></h1>
+            <input type="text" name="name" id="name" required>
+            <button class="bt1" type="submit" value="<%= title %>" name="but">+</button>
+        </form>
+        <% for(var i=0;i<arr.length;i++){ %>
+                <form class="f2" action="/delete" method="post">
+                    <%= arr[i].name %>
+                    <button  type="submit"name="check" value="<%= arr[i]._id %>" class="diff" name="checkbox"><i class="fas fa-check"></i></i></button>
+                    <button type="submit"name="check" value="<%= arr[i]._id %>" ><i class="fas fa-trash-alt"></i></button>
+                    <input type="hidden" name="listname" value="<%= title %>"></input>
+                </form>
+            <% } %>
+    </div>
+    <script src="/files.js"></script>
+</body>
+
+</html>
